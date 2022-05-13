@@ -149,6 +149,7 @@ wikipediaSocket.init = function(ws_url, lid, svg_area) {
             };
 
             connection.onmessage = function(resp) {
+                if (localStorage.alertData) alert(resp.data);
                 var data = JSON.parse(resp.data);
 
                 if (!all_loaded) {
